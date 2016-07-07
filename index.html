@@ -269,6 +269,90 @@
             <div class="postShorten-header">
                 <h1 class="postShorten-title" itemprop="headline">
                     
+                        <a class="link-unstyled" href="/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/">
+                            Blog no GitHub Pages, usando NodeJS e Hexo
+                        </a>
+                    
+                </h1>
+                <div class="postShorten-meta">
+    <time itemprop="datePublished" datetime="2016-07-06T22:52:50-03:00">
+	
+		    06/07/2016
+    	
+    </time>
+    
+        <span>em </span>
+        
+    <a class="category-link" href="/categories/Blog/">Blog</a>, <a class="category-link" href="/categories/Blog/Javascript/">Javascript</a>
+
+
+    
+</div>
+
+            </div>
+            
+                <div class="postShorten-content" itemprop="articleBody">
+                    <p>Você vai precisar instalar algumas coisas antes de começar:</p>
+<p><img src="http://nodejs.org/" alt="NodeJS"><br>Hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo</div></pre></td></tr></table></figure>
+<p>Você pode instalar globalmente com o argumento -g, mas se tiver alguma experiência pode colocar o pacote em seu package.json e depois dar um npm install no diretório do blog.</p>
+<h2>Criando a sua GitHub page</h2>
+
+<p>O GitHub disponibiliza um serviço de hospedagens para sites estáticos aqui: GitHub Pages.</p>
+<p>Crie um novo repositório com o nome nesse formato: seuusername.github.io</p>
+<p>Atenção: O formato deve seguir esse padrão, caso contrário o github não considerará seu repositório como uma página válida.</p>
+<p>Agora, com o repositório criado, é só clonar para a sua máquina.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone /caminho/para/o/seu/repositório</div></pre></td></tr></table></figure>
+<h2>Vamos configurar o Hexo</h2>
+
+<p>Dentro do diretório que você acabou de clonar para a sua máquina, dê os seguintes comandos:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<p>Vamos abrir o arquivo de configuração _config.yml.</p>
+<p>Altere o valor desses quatro atributos básicos:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: &#123;Nome do blog&#125;</div><div class="line">subtitle:</div><div class="line">author: &#123;Nome do Autor&#125;</div><div class="line">language: pt-BR</div></pre></td></tr></table></figure>
+<h2>Configurando o deploy das postagens</h2>
+
+<p>Para fazer com que o deploys do GitHub funcionem, sua seção #Deployment deve-se parecer com isso:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:&#123;username&#125;/&#123;username&#125;.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>Agora é só instalar o deployer:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<h2>Criando a primeira postagem</h2>
+
+<p>Para criar uma postagem é simples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new &quot;Post de Teste&quot;</div></pre></td></tr></table></figure>
+<p>Pronto, você criou a primeira postagem. Agora vamos editá-la:</p>
+<p>Dentro do diretório /source foi criado um arquivo .md com a sua postagem.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: Post Teste</div><div class="line">date: 2016-07-03 13:58:33</div><div class="line">tags:</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>Esse é seu post, você pode escrevê-lo como quiser, utilizando diversos recursos disponibilizados na documentação completa do Hexo.</p>
+<h2>Realizando o primeiro deploy</h2>
+
+<p>Com a postagem editada, basta dar os seguintes comandos e seu blog vai estar atualizado.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>Pronto Agora o seu blog está atualizado e no ar!</p>
+
+                    
+                        
+                    
+                    
+                        <p>
+                            <a href="/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/#post-footer" class="postShorten-excerpt_link link">
+                                Comentar e compartilhar
+                            </a>
+                        </p>
+                    
+                </div>
+            
+        </div>
+        
+    </article>
+    
+    
+    <article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+        <div class="postShorten-wrap">
+            
+            <div class="postShorten-header">
+                <h1 class="postShorten-title" itemprop="headline">
+                    
                         <a class="link-unstyled" href="/2016/06/23/google-lanca-curso-de-criacao-de-apps-de-android-para-quem-nunca-programou/">
                             Google oferece curso de criação de apps de Android para quem nunca programou
                         </a>
