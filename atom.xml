@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Blog do Cleber</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://cleber.github.io/"/>
+  <updated>2016-07-07T03:50:49.000Z</updated>
+  <id>http://cleber.github.io/</id>
+  
+  <author>
+    <name>Cleber Fonseca</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Blog no GitHub Pages, usando NodeJS e Hexo</title>
+    <link href="http://cleber.github.io/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/"/>
+    <id>http://cleber.github.io/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/</id>
+    <published>2016-07-07T01:52:50.000Z</published>
+    <updated>2016-07-07T03:50:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Você vai precisar instalar algumas coisas antes de começar:&lt;/p&gt;
+&lt;a href=&quot;http://nodejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NodeJS&lt;/a&gt; &lt;br&gt; &lt;a href=&quot;https://hexo.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install -g hexo&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Você pode instalar globalmente com o argumento -g, mas se tiver alguma experiência pode colocar o pacote em seu package.json e depois dar um npm install no diretório do blog.&lt;/p&gt;
+&lt;h2&gt;Criando a sua GitHub page&lt;/h2&gt;
+
+&lt;p&gt;O GitHub disponibiliza um serviço de hospedagens para sites estáticos aqui: GitHub Pages.&lt;/p&gt;
+&lt;p&gt;Crie um novo repositório com o nome nesse formato: seuusername.github.io&lt;/p&gt;
+&lt;p&gt;Atenção: O formato deve seguir esse padrão, caso contrário o github não considerará seu repositório como uma página válida.&lt;/p&gt;
+&lt;p&gt;Agora, com o repositório criado, é só clonar para a sua máquina.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; /caminho/para/o/seu/repositório&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2&gt;Vamos configurar o Hexo&lt;/h2&gt;
+
+&lt;p&gt;Dentro do diretório que você acabou de clonar para a sua máquina, dê os seguintes comandos:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo init&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ npm install&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Vamos abrir o arquivo de configuração _config.yml.&lt;/p&gt;
+&lt;p&gt;Altere o valor desses quatro atributos básicos:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;title: &amp;#123;Nome do blog&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;subtitle:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;author: &amp;#123;Nome do Autor&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;language: pt-BR&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2&gt;Configurando o deploy das postagens&lt;/h2&gt;
+
+&lt;p&gt;Para fazer com que o deploys do GitHub funcionem, sua seção #Deployment deve-se parecer com isso:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;deploy:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  type: git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  repo: git@github.com:&amp;#123;username&amp;#125;/&amp;#123;username&amp;#125;.github.io.git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  branch: master&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Agora é só instalar o deployer:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install hexo-deployer-git --save&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2&gt;Criando a primeira postagem&lt;/h2&gt;
+
+&lt;p&gt;Para criar uma postagem é simples:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;Post de Teste&quot;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Pronto, você criou a primeira postagem. Agora vamos editá-la:&lt;/p&gt;
+&lt;p&gt;Dentro do diretório /source foi criado um arquivo .md com a sua postagem.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;title: Post Teste&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;date: 2016-07-03 13:58:33&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;tags:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;---&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Esse é seu post, você pode escrevê-lo como quiser, utilizando diversos recursos disponibilizados na documentação completa do Hexo.&lt;/p&gt;
+&lt;h2&gt;Realizando o primeiro deploy&lt;/h2&gt;
+
+&lt;p&gt;Com a postagem editada, basta dar os seguintes comandos e seu blog vai estar atualizado.&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo generate&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo deploy&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Pronto Agora o seu blog está atualizado e no ar!&lt;/p&gt;
+&lt;h1&gt;Alguns links que podem ajudar&lt;/h1&gt;
+
+&lt;blockquote&gt;&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub Pages&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documentação do Hexo&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://nodejs.org/en/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documentação do NodeJS&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Você vai precisar instalar algumas coisas antes de começar:&lt;/p&gt;
+&lt;a href=&quot;http://nodejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;NodeJS&lt;/a&gt; &lt;b
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://cleber.github.io/categories/Blog/"/>
+    
+      <category term="Javascript" scheme="http://cleber.github.io/categories/Blog/Javascript/"/>
+    
+    
+      <category term="Node.js" scheme="http://cleber.github.io/tags/Node-js/"/>
+    
+      <category term="Hexo" scheme="http://cleber.github.io/tags/Hexo/"/>
+    
+      <category term="GitHub" scheme="http://cleber.github.io/tags/GitHub/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Google oferece curso de criação de apps de Android para quem nunca programou</title>
+    <link href="http://cleber.github.io/2016/06/23/google-lanca-curso-de-criacao-de-apps-de-android-para-quem-nunca-programou/"/>
+    <id>http://cleber.github.io/2016/06/23/google-lanca-curso-de-criacao-de-apps-de-android-para-quem-nunca-programou/</id>
+    <published>2016-06-23T13:01:31.000Z</published>
+    <updated>2016-07-06T03:57:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;O Google oferece curso online para a criação de aplicativos de Android em parceria com a Udacity. O curso tem como objetivo introduzir quem nunca programou à criação de apps, o único porem é que o curso é em inglês. O curso do Google é pagos, embora haja um período grátis de testes de 1 semana; depois do período a mensalidade é de US$ 200.&lt;/p&gt;
+&lt;p&gt;O curso faz parte da categoria Nanodegrees do Udacity, e como outros cursos do tipo oferecidos pelo Google sobre Android, os próprios funcionários da empresa são responsáveis pelo ensino.&lt;/p&gt;
+&lt;p&gt;O objetivo das aulas é ensinar o beabá da criação de um aplicativo, o que inclui o básico do Java e como interagir com Web APIs. Os estudantes também aprenderão como lidar com bancos de dados SQLite.&lt;/p&gt;
+&lt;p&gt;A ideia é que o aluno, ao fim do curso, comece a participar de aulas mais avançadas de desenvolvimento de aplicativos para o Android, que o Google também oferece no Udacity. Os primeiros matriculados, inclusive, podem receber uma bolsa para continuar a sequência de Nanodegrees do Android.&lt;/p&gt;
+&lt;p&gt;Para quem está interessado, a Udacity já está aceitando cadastros nesse &lt;a href=&quot;https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;link&lt;/a&gt;, e as aulas devem começar no fim do ano, no quarto trimestre.&lt;/p&gt;
+&lt;p&gt;Via &lt;a href=&quot;http://thenextweb.com/google/2016/06/22/google-android-nanodegree/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The Next Web&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;O Google oferece curso online para a criação de aplicativos de Android em parceria com a Udacity. O curso tem como objetivo introduzir qu
+    
+    </summary>
+    
+      <category term="Android" scheme="http://cleber.github.io/categories/Android/"/>
+    
+      <category term="Udacity" scheme="http://cleber.github.io/categories/Android/Udacity/"/>
+    
+    
+      <category term="Android" scheme="http://cleber.github.io/tags/Android/"/>
+    
+      <category term="Cursos" scheme="http://cleber.github.io/tags/Cursos/"/>
+    
+      <category term="Udacity" scheme="http://cleber.github.io/tags/Udacity/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Assim se perde o conceito de Hackaton</title>
+    <link href="http://cleber.github.io/2016/06/08/assim-se-perde-o-conceito-de-hackaton/"/>
+    <id>http://cleber.github.io/2016/06/08/assim-se-perde-o-conceito-de-hackaton/</id>
+    <published>2016-06-09T01:03:08.000Z</published>
+    <updated>2016-07-07T00:59:09.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Como professor de cursos de Tecnologia sou um aficionado por competições de desenvolvimento, chamadas Hackaton, onde uma equipe se dispõe a criar e desenvolver um produto ou sistema que consiga resolver algum problema especificado no lançamento da competição. E esse produto ou sistema deve ser disponibilizado, segunda as regras da competição para que qualquer pessoa possa utilizar para resolver o seu problema.&lt;/p&gt;
+&lt;p&gt;Por que essa introdução, hoje navegando na internet e procurando especificamente a palavra Hackaton encontrei a competição proposta pela empresa Gerdau, logo fui ler o regulamento e encontrei na clausula 10.2 do regulamento a seguinte informação.&lt;/p&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/clebersfonseca/clebersfonseca.github.io/master/images/Gerdau_10.2.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;Essa clausula estraga todo o conceito de Hackaton, quem em aceita desenvolver um produto ou sistema e entrega-lo de graça para uma empresa que pode fazer o que quiser com isso?&lt;/p&gt;
+&lt;p&gt;A o prêmio da competição diz que o primeiro colocado pode receber um investimento de R$100.000,00 (cem mil reais), mas deixa claro que é a seu exclusivo critério, quer dizer se não quiser não investe nada. E segundo a clausula 10.2 se eles intenderem que vale a pena investir eles podem muito bem pegar o produto ou sistema do competidor investir e lança-lo no mercado sem que a equipe receba nada em troca.&lt;/p&gt;
+&lt;p&gt;A empresa Gerdau desvirtuou o conceito de Hackaton para captar novas ideias de produtos.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Como professor de cursos de Tecnologia sou um aficionado por competições de desenvolvimento, chamadas Hackaton, onde uma equipe se dispõe
+    
+    </summary>
+    
+      <category term="Hackaton" scheme="http://cleber.github.io/categories/Hackaton/"/>
+    
+    
+      <category term="Hackaton" scheme="http://cleber.github.io/tags/Hackaton/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Lista das linguagens de programação mais utilizadas em 2016</title>
+    <link href="http://cleber.github.io/2016/02/20/lista-das-linguagens-de-programacao-mais-utilizadas-em-2016/"/>
+    <id>http://cleber.github.io/2016/02/20/lista-das-linguagens-de-programacao-mais-utilizadas-em-2016/</id>
+    <published>2016-02-20T02:09:44.000Z</published>
+    <updated>2016-07-07T01:18:36.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Confira o estudo realizado pelo &lt;a href=&quot;http://www.tiobe.com/index.php/content/company/Home.html&quot; title=&quot;http://www.tiobe.com/index.php/content/company/Home.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TIOBE Software&lt;/a&gt; que revela quais são as linguagens de programação preferidas dos programadores&lt;/p&gt;
+&lt;p&gt;O site TIOBE é um grande site de estudos de informações na internet e o mesmo é atualizado mensalmente com base no número de engenheiros qualificados ao redor do mundo, cursos especializados e fornecedores. Os populares mecanismos de buscas, como Google, Bing e Yahoo!, também são utilizados para calcular as classificações. O índice não determina quais são as melhores ou as piores linguagens, somente exibe quais são mais comuns atualmente.&lt;/p&gt;
+&lt;p&gt;Veja a tabela :&lt;/p&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/clebersfonseca/clebersfonseca.github.io/master/images/linguagens-mais-utilizadas-2016.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;Veja também um gráfico que mostra o ranking das linguagens ao longo do tempo :&lt;/p&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/clebersfonseca/clebersfonseca.github.io/master/images/linguagens-mais-utilizadas-20161-1.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;Após a análise do mês de Fevereiro de 2015~2016 ficou claramente que o destaque se deve à linguagem Python que ganhou muitas posições e está entrando agora no top 5!&lt;/p&gt;
+&lt;p&gt;Enquanto a linguagens  Java ocupa a primeira colocação.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Confira o estudo realizado pelo &lt;a href=&quot;http://www.tiobe.com/index.php/content/company/Home.html&quot; title=&quot;http://www.tiobe.com/index.php/
+    
+    </summary>
+    
+      <category term="Programação" scheme="http://cleber.github.io/categories/Programacao/"/>
+    
+      <category term="Python" scheme="http://cleber.github.io/categories/Programacao/Python/"/>
+    
+    
+      <category term="Python" scheme="http://cleber.github.io/tags/Python/"/>
+    
+      <category term="Programação" scheme="http://cleber.github.io/tags/Programacao/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Deploy de Aplicação Django com Nginx, Gunicorn, virtualenv e supervisor</title>
+    <link href="http://cleber.github.io/2016/01/10/deploy-de-aplicacao-django-com-nginx-gunicorn-virtualenv-e-supervisor/"/>
+    <id>http://cleber.github.io/2016/01/10/deploy-de-aplicacao-django-com-nginx-gunicorn-virtualenv-e-supervisor/</id>
+    <published>2016-01-10T05:58:14.000Z</published>
+    <updated>2016-07-06T04:08:19.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;Configuracao-do-meu-sistema&quot;&gt;&lt;a href=&quot;#Configuracao-do-meu-sistema&quot; class=&quot;headerlink&quot; title=&quot;Configuração do meu sistema&quot;&gt;&lt;/a&gt;Configuração do meu sistema&lt;/h2&gt;&lt;p&gt;Utilizo essa configuração em um VPS com SO CentOS 6.6, com servidor Nginx já instalado utilizo também o &lt;em&gt;pyenv&lt;/em&gt; para ter múltiplas instalações do python na maquina.&lt;br&gt;Todas as aplicações que estão hospedadas no servidor encontram-se na pasta:&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;/webapps/..&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Nesse post vou mostra como fazer o deploy da aplicação que está sendo criada no curso &lt;a href=&quot;http://welcometothedjango.com.br&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Welcome to the Django&lt;/a&gt; que é ministrado pelo mestre Henrique Bastos.&lt;/p&gt;
+&lt;p&gt;Primeiramente cria0 o grupo e usuário que vai ter controle sobre o projeto.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo groupadd --system webapps&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo useradd --system --gid webapps --shell /bin/bash --home /webapps/wttd wttd&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Então a pasta do projeto será wttd, então vamos começar criando a pasta do projeto.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo mkdir -p /webapps/wttd/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo chown wttd /webapps/wttd/&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Logo após a criação da pasta vamos criar o virtualenv, lembrando que utilizo o Python 3.5 na minha maquina.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo su - wttd&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cd /webapps/wttd/&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;pyenv local 3.5.0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;python -m venv .wttd&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;source .wttd/bin/activate&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Com os comando acima criamos o virtualenv e o habilitamos. Em seguida podemos instalar o Django na nossa máquina virtual, no meu caso como o projeto já encontra-se em desenvolvimento no github, posso realizar o clone e depois instalar os módulos do python através do requirements.&lt;/p&gt;
+&lt;p&gt;Então vamos aos comandos para clonar o projeto.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git clone https://github.com/clebersfonseca/eventex-wttd.git event&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;cd eventex&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Após clonar o projeto para a pasta eventex, devemos instalar os pacotes necessários para o funcionamento da aplicação.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;pip install -r requirements.txt&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Após instalados os pacotes devemos realizar as configurações do sistema, para isso vamos copiar os arquivo de configuração e fazer as alterações necessárias.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;cp contrib/env-sample .env&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Isso fará uma cópia do arquivo de configuração agora podemos gerar o SECRET_KEY do projeto utilizando o comando&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;python contrib/secret_gen.py&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Será gerada uma senha que deve ser substituída pelo texto “THIS_IS_NOT_A_GOOD_SECRET” no arquivo .env que foi criado no passo anterior. Neste arquivo também devem ser inseridas as configurações do banco de dados, substituindo os dados do “DATABASE_URL” pelas suas configurações.&lt;/p&gt;
+&lt;p&gt;Feitas essas configurações o sistema está pronto para criar as tabelas no banco de dados e cadastrar o primeiro super usuário do sistema e coletar os arquivos estáticos, através dos comandos abaixo:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;python manage.py migrate&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;python manage.py createsuperuser&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;python manage.py collectstatic&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Após essas alterações vamos colocar o servidor a funcionar.&lt;/p&gt;
+&lt;h2 id=&quot;Configuracao-do-Gunicorn&quot;&gt;&lt;a href=&quot;#Configuracao-do-Gunicorn&quot; class=&quot;headerlink&quot; title=&quot;Configuração do Gunicorn&quot;&gt;&lt;/a&gt;Configuração do Gunicorn&lt;/h2&gt;&lt;p&gt;Para criar o arquivo de configuração do Gunicorn é criado um arquivo junto as arquivos do virtualenv, criaremos o arquivo em &lt;strong&gt;/webapps/wttd/.wttd/bin/gunicorn_start&lt;/strong&gt; com o seguinte conteúdo:&lt;/p&gt;
+&lt;script src=&quot;//gist.github.com/54adaefc6024af873e5d.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Logo após devemos tornar esse arquivo criado em um executável.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;chmod u+x /webapps/wttd/.wttd/bin/gunicorn_start&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Configuracao-do-Supervisor&quot;&gt;&lt;a href=&quot;#Configuracao-do-Supervisor&quot; class=&quot;headerlink&quot; title=&quot;Configuração do Supervisor&quot;&gt;&lt;/a&gt;Configuração do Supervisor&lt;/h2&gt;&lt;p&gt;Agora vamos configurar o supervisor que já deve estar instalado no SO. Para isso vamos criar o arquivo &lt;strong&gt;/etc/supervisord.d/eventex.conf &lt;/strong&gt;com o seguinte conteúdo.&lt;/p&gt;
+&lt;script src=&quot;//gist.github.com/bb2b64857000ec6a280f.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Depois temos de criar a pasta onde ficarão os logs do sistema.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mkdir /webapps/wttd/logs&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;touch /webapps/wttd/logs/gunicorn_supervisor.log&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Logo em seguida devemos fazer com que o supervisor recarregue os projetos para ler o nosso arquivo de configuração.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo supervisorctl reread&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo supervisorctl update&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;A partir daqui já pode ser iniciado o serviço do supervisor.&lt;/p&gt;
+&lt;h2 id=&quot;Configuracao-do-Nginx&quot;&gt;&lt;a href=&quot;#Configuracao-do-Nginx&quot; class=&quot;headerlink&quot; title=&quot;Configuração do Nginx&quot;&gt;&lt;/a&gt;Configuração do Nginx&lt;/h2&gt;&lt;p&gt;Para configurar o Nginx devemos criar o arquivo &lt;strong&gt;/etc/nginx/sites-available/eventex_nginx.conf&lt;/strong&gt;, com o conteúdo abaixo.&lt;/p&gt;
+&lt;script src=&quot;//gist.github.com/42d76d3b0ae3de7873ff.js&quot;&gt;&lt;/script&gt;
+&lt;p&gt;Logo em seguida deve-se criar um link simbólico para os sites-enabled com o comando abaixo.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo ln -s /etc/nginx/sites-available/eventex_nginx.conf /etc/nginx/sites-enabled/eventex_nginx.conf&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Logo após podemos reiniciar o serviço do nginx.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo service nginx restart&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;E depois é só testar a aplicação rodando em produção.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Configuracao-do-meu-sistema&quot;&gt;&lt;a href=&quot;#Configuracao-do-meu-sistema&quot; class=&quot;headerlink&quot; title=&quot;Configuração do meu sistema&quot;&gt;&lt;/a&gt;Confi
+    
+    </summary>
+    
+      <category term="Deploy" scheme="http://cleber.github.io/categories/Deploy/"/>
+    
+      <category term="Django" scheme="http://cleber.github.io/categories/Deploy/Django/"/>
+    
+      <category term="Nginx" scheme="http://cleber.github.io/categories/Deploy/Django/Nginx/"/>
+    
+      <category term="Programação" scheme="http://cleber.github.io/categories/Deploy/Django/Nginx/Programacao/"/>
+    
+      <category term="Python" scheme="http://cleber.github.io/categories/Deploy/Django/Nginx/Programacao/Python/"/>
+    
+    
+      <category term="Deploy" scheme="http://cleber.github.io/tags/Deploy/"/>
+    
+      <category term="Django" scheme="http://cleber.github.io/tags/Django/"/>
+    
+      <category term="Gunicorn" scheme="http://cleber.github.io/tags/Gunicorn/"/>
+    
+      <category term="Nginx" scheme="http://cleber.github.io/tags/Nginx/"/>
+    
+      <category term="Python" scheme="http://cleber.github.io/tags/Python/"/>
+    
+      <category term="Supervisor" scheme="http://cleber.github.io/tags/Supervisor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Olá, mundo cruel!</title>
+    <link href="http://cleber.github.io/2015/12/29/ola-mundo/"/>
+    <id>http://cleber.github.io/2015/12/29/ola-mundo/</id>
+    <published>2015-12-29T03:00:35.000Z</published>
+    <updated>2016-07-06T03:57:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Este é o primeiro de muitos posts que pretendo publicar a respeito de tudo que faço e vejo no mundo da tecnologia.&lt;/p&gt;
+&lt;p&gt;Minhas aulas estarão disponibilizadas aqui e também alguns testes que faço só por diversão.&lt;/p&gt;
+&lt;p&gt;Em breve teremos novidades para quem quer começar ou aprender um pouco mais sobre python.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Este é o primeiro de muitos posts que pretendo publicar a respeito de tudo que faço e vejo no mundo da tecnologia.&lt;/p&gt;
+&lt;p&gt;Minhas aulas es
+    
+    </summary>
+    
+      <category term="Sem categoria" scheme="http://cleber.github.io/categories/Sem-categoria/"/>
+    
+    
+      <category term="Hello Word!" scheme="http://cleber.github.io/tags/Hello-Word/"/>
+    
+  </entry>
+  
+</feed>
