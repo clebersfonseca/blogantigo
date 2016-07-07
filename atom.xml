@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://cleber.github.io/"/>
+  <link href="http://clebersfonseca.github.io/"/>
   <updated>2016-07-07T03:50:49.000Z</updated>
-  <id>http://cleber.github.io/</id>
+  <id>http://clebersfonseca.github.io/</id>
   
   <author>
     <name>Cleber Fonseca</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Blog no GitHub Pages, usando NodeJS e Hexo</title>
-    <link href="http://cleber.github.io/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/"/>
-    <id>http://cleber.github.io/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/</id>
+    <link href="http://clebersfonseca.github.io/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/"/>
+    <id>http://clebersfonseca.github.io/2016/07/06/Blog-no-GitHub-Pages-usando-NodeJS-e-Hexo/</id>
     <published>2016-07-07T01:52:50.000Z</published>
     <updated>2016-07-07T03:50:49.000Z</updated>
     
@@ -72,23 +72,23 @@
     
     </summary>
     
-      <category term="Blog" scheme="http://cleber.github.io/categories/Blog/"/>
+      <category term="Blog" scheme="http://clebersfonseca.github.io/categories/Blog/"/>
     
-      <category term="Javascript" scheme="http://cleber.github.io/categories/Blog/Javascript/"/>
+      <category term="Javascript" scheme="http://clebersfonseca.github.io/categories/Blog/Javascript/"/>
     
     
-      <category term="Node.js" scheme="http://cleber.github.io/tags/Node-js/"/>
+      <category term="Node.js" scheme="http://clebersfonseca.github.io/tags/Node-js/"/>
     
-      <category term="Hexo" scheme="http://cleber.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://clebersfonseca.github.io/tags/Hexo/"/>
     
-      <category term="GitHub" scheme="http://cleber.github.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="http://clebersfonseca.github.io/tags/GitHub/"/>
     
   </entry>
   
   <entry>
     <title>Google oferece curso de criação de apps de Android para quem nunca programou</title>
-    <link href="http://cleber.github.io/2016/06/23/google-lanca-curso-de-criacao-de-apps-de-android-para-quem-nunca-programou/"/>
-    <id>http://cleber.github.io/2016/06/23/google-lanca-curso-de-criacao-de-apps-de-android-para-quem-nunca-programou/</id>
+    <link href="http://clebersfonseca.github.io/2016/06/23/google-lanca-curso-de-criacao-de-apps-de-android-para-quem-nunca-programou/"/>
+    <id>http://clebersfonseca.github.io/2016/06/23/google-lanca-curso-de-criacao-de-apps-de-android-para-quem-nunca-programou/</id>
     <published>2016-06-23T13:01:31.000Z</published>
     <updated>2016-07-06T03:57:37.000Z</updated>
     
@@ -107,23 +107,23 @@
     
     </summary>
     
-      <category term="Android" scheme="http://cleber.github.io/categories/Android/"/>
+      <category term="Android" scheme="http://clebersfonseca.github.io/categories/Android/"/>
     
-      <category term="Udacity" scheme="http://cleber.github.io/categories/Android/Udacity/"/>
+      <category term="Udacity" scheme="http://clebersfonseca.github.io/categories/Android/Udacity/"/>
     
     
-      <category term="Android" scheme="http://cleber.github.io/tags/Android/"/>
+      <category term="Android" scheme="http://clebersfonseca.github.io/tags/Android/"/>
     
-      <category term="Cursos" scheme="http://cleber.github.io/tags/Cursos/"/>
+      <category term="Cursos" scheme="http://clebersfonseca.github.io/tags/Cursos/"/>
     
-      <category term="Udacity" scheme="http://cleber.github.io/tags/Udacity/"/>
+      <category term="Udacity" scheme="http://clebersfonseca.github.io/tags/Udacity/"/>
     
   </entry>
   
   <entry>
     <title>Assim se perde o conceito de Hackaton</title>
-    <link href="http://cleber.github.io/2016/06/08/assim-se-perde-o-conceito-de-hackaton/"/>
-    <id>http://cleber.github.io/2016/06/08/assim-se-perde-o-conceito-de-hackaton/</id>
+    <link href="http://clebersfonseca.github.io/2016/06/08/assim-se-perde-o-conceito-de-hackaton/"/>
+    <id>http://clebersfonseca.github.io/2016/06/08/assim-se-perde-o-conceito-de-hackaton/</id>
     <published>2016-06-09T01:03:08.000Z</published>
     <updated>2016-07-07T00:59:09.000Z</updated>
     
@@ -141,17 +141,17 @@
     
     </summary>
     
-      <category term="Hackaton" scheme="http://cleber.github.io/categories/Hackaton/"/>
+      <category term="Hackaton" scheme="http://clebersfonseca.github.io/categories/Hackaton/"/>
     
     
-      <category term="Hackaton" scheme="http://cleber.github.io/tags/Hackaton/"/>
+      <category term="Hackaton" scheme="http://clebersfonseca.github.io/tags/Hackaton/"/>
     
   </entry>
   
   <entry>
     <title>Lista das linguagens de programação mais utilizadas em 2016</title>
-    <link href="http://cleber.github.io/2016/02/20/lista-das-linguagens-de-programacao-mais-utilizadas-em-2016/"/>
-    <id>http://cleber.github.io/2016/02/20/lista-das-linguagens-de-programacao-mais-utilizadas-em-2016/</id>
+    <link href="http://clebersfonseca.github.io/2016/02/20/lista-das-linguagens-de-programacao-mais-utilizadas-em-2016/"/>
+    <id>http://clebersfonseca.github.io/2016/02/20/lista-das-linguagens-de-programacao-mais-utilizadas-em-2016/</id>
     <published>2016-02-20T02:09:44.000Z</published>
     <updated>2016-07-07T01:18:36.000Z</updated>
     
@@ -171,21 +171,21 @@
     
     </summary>
     
-      <category term="Programação" scheme="http://cleber.github.io/categories/Programacao/"/>
+      <category term="Programação" scheme="http://clebersfonseca.github.io/categories/Programacao/"/>
     
-      <category term="Python" scheme="http://cleber.github.io/categories/Programacao/Python/"/>
+      <category term="Python" scheme="http://clebersfonseca.github.io/categories/Programacao/Python/"/>
     
     
-      <category term="Python" scheme="http://cleber.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://clebersfonseca.github.io/tags/Python/"/>
     
-      <category term="Programação" scheme="http://cleber.github.io/tags/Programacao/"/>
+      <category term="Programação" scheme="http://clebersfonseca.github.io/tags/Programacao/"/>
     
   </entry>
   
   <entry>
     <title>Deploy de Aplicação Django com Nginx, Gunicorn, virtualenv e supervisor</title>
-    <link href="http://cleber.github.io/2016/01/10/deploy-de-aplicacao-django-com-nginx-gunicorn-virtualenv-e-supervisor/"/>
-    <id>http://cleber.github.io/2016/01/10/deploy-de-aplicacao-django-com-nginx-gunicorn-virtualenv-e-supervisor/</id>
+    <link href="http://clebersfonseca.github.io/2016/01/10/deploy-de-aplicacao-django-com-nginx-gunicorn-virtualenv-e-supervisor/"/>
+    <id>http://clebersfonseca.github.io/2016/01/10/deploy-de-aplicacao-django-com-nginx-gunicorn-virtualenv-e-supervisor/</id>
     <published>2016-01-10T05:58:14.000Z</published>
     <updated>2016-07-06T04:08:19.000Z</updated>
     
@@ -236,35 +236,35 @@
     
     </summary>
     
-      <category term="Deploy" scheme="http://cleber.github.io/categories/Deploy/"/>
+      <category term="Deploy" scheme="http://clebersfonseca.github.io/categories/Deploy/"/>
     
-      <category term="Django" scheme="http://cleber.github.io/categories/Deploy/Django/"/>
+      <category term="Django" scheme="http://clebersfonseca.github.io/categories/Deploy/Django/"/>
     
-      <category term="Nginx" scheme="http://cleber.github.io/categories/Deploy/Django/Nginx/"/>
+      <category term="Nginx" scheme="http://clebersfonseca.github.io/categories/Deploy/Django/Nginx/"/>
     
-      <category term="Programação" scheme="http://cleber.github.io/categories/Deploy/Django/Nginx/Programacao/"/>
+      <category term="Programação" scheme="http://clebersfonseca.github.io/categories/Deploy/Django/Nginx/Programacao/"/>
     
-      <category term="Python" scheme="http://cleber.github.io/categories/Deploy/Django/Nginx/Programacao/Python/"/>
+      <category term="Python" scheme="http://clebersfonseca.github.io/categories/Deploy/Django/Nginx/Programacao/Python/"/>
     
     
-      <category term="Deploy" scheme="http://cleber.github.io/tags/Deploy/"/>
+      <category term="Deploy" scheme="http://clebersfonseca.github.io/tags/Deploy/"/>
     
-      <category term="Django" scheme="http://cleber.github.io/tags/Django/"/>
+      <category term="Django" scheme="http://clebersfonseca.github.io/tags/Django/"/>
     
-      <category term="Gunicorn" scheme="http://cleber.github.io/tags/Gunicorn/"/>
+      <category term="Gunicorn" scheme="http://clebersfonseca.github.io/tags/Gunicorn/"/>
     
-      <category term="Nginx" scheme="http://cleber.github.io/tags/Nginx/"/>
+      <category term="Nginx" scheme="http://clebersfonseca.github.io/tags/Nginx/"/>
     
-      <category term="Python" scheme="http://cleber.github.io/tags/Python/"/>
+      <category term="Python" scheme="http://clebersfonseca.github.io/tags/Python/"/>
     
-      <category term="Supervisor" scheme="http://cleber.github.io/tags/Supervisor/"/>
+      <category term="Supervisor" scheme="http://clebersfonseca.github.io/tags/Supervisor/"/>
     
   </entry>
   
   <entry>
     <title>Olá, mundo cruel!</title>
-    <link href="http://cleber.github.io/2015/12/29/ola-mundo/"/>
-    <id>http://cleber.github.io/2015/12/29/ola-mundo/</id>
+    <link href="http://clebersfonseca.github.io/2015/12/29/ola-mundo/"/>
+    <id>http://clebersfonseca.github.io/2015/12/29/ola-mundo/</id>
     <published>2015-12-29T03:00:35.000Z</published>
     <updated>2016-07-06T03:57:37.000Z</updated>
     
@@ -280,10 +280,10 @@
     
     </summary>
     
-      <category term="Sem categoria" scheme="http://cleber.github.io/categories/Sem-categoria/"/>
+      <category term="Sem categoria" scheme="http://clebersfonseca.github.io/categories/Sem-categoria/"/>
     
     
-      <category term="Hello Word!" scheme="http://cleber.github.io/tags/Hello-Word/"/>
+      <category term="Hello Word!" scheme="http://clebersfonseca.github.io/tags/Hello-Word/"/>
     
   </entry>
   
